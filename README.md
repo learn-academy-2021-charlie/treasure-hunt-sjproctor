@@ -13,6 +13,7 @@
   - branch: emoji-tree
   - emoji keyboard - control + command + spacebar
 - As a user, if I select the winning square the question mark will become a treasure emoji.
+  - branch: winning-condition
 - As a user, if I select the losing square the question mark will become a bomb emoji.
 - As a user, I can see a counter that shows how many guesses I have left. The counter starts at 5 and decrements one every time I click on a square that is not the treasure nor the bomb.
 - As a user, I can see a message informing me that I won the game if I select the square that contains the treasure.
