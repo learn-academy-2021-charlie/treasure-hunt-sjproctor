@@ -1,17 +1,10 @@
 import React, { Component } from 'react'
 
 class Square extends Component{
-
-  handleClick = () => {
-    this.props.handleGamePlay(this.props.index)
-  }
-
   render(){
     return(
       <>
-        <div id="square" onClick={this.handleClick}>
-          {this.props.value}
-        </div>
+        <div id="square">{this.props.value}</div>
       </>
     )
   }
