@@ -8,7 +8,8 @@ class App extends Component{
     this.state = {
       board: ["?", "?", "?", "?", "?", "?", "?", "?", "?"],
       treasureLocation: null,
-      bombLocation: null
+      bombLocation: null,
+      counter: 5
     }
   }
 
@@ -19,16 +20,16 @@ class App extends Component{
   }
 
   handleGamePlay = (index) => {
-    const {board, treasureLocation, bombLocation} = this.state
+    const {board, treasureLocation, bombLocation, counter} = this.state
     if(index === treasureLocation){
       board[index] = "💎"
-      this.setState({board: board})
+      this.setState({board: board, counter: counter - 1})
     } else if(index === bombLocation){
       board[index] = "💣"
-      this.setState({board: board})
+      this.setState({board: board, counter: counter - 1})
     } else {
       board[index] = "🌴"
-      this.setState({board: board})
+      this.setState({board: board, counter: counter - 1})
     }
   }
 
@@ -38,6 +39,7 @@ class App extends Component{
     return(
       <>
         <h1>Treasure Hunt Game</h1>
+        <p>Turns Remaining: {this.state.counter}</p>
         <div id="gameboard">
           {this.state.board.map((value, index) => {
             return (
